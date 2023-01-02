@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <fieldset>
+        <legend>Add User</legend>
+        <label for="fName"> First Name :</label>
+        <input type="text" id="fName" />
+
+        <label for="lName"> Last Name :</label>
+        <input type="text" id="lName" />
+
+        <label for="email"> Email :</label>
+        <input type="email" id="email" />
+        <label for="status">Status</label>
+        <select id="status">
+          <option>Teacher</option>
+          <option>Student</option>
+          <option>Guest</option>
+        </select>
+
+        <p>Choose your favorite programming language:</p>
+        <label for="html">HTML</label>
+        <input type="radio" name="PL" id="html" value="html" />
+        <label for="css">CSS</label>
+        <input type="radio" name="PL" id="css" value="css" />
+        <label for="javascript">Javascript</label>
+        <input type="radio" name="PL" id="javascript" value="javascript" />
+        <div>
+          <div><label for="comments">Feedback</label></div>
+          <textarea rows="5" cols="33" id="comments"> </textarea>
+          <input type="date" name="" id="" />
+        </div>
+        <label for="toc">Agree to terms & conditions </label>
+        <input type="checkbox" name="toc" id="toc" checked />
+        <label for="new">Sign up to newsletter </label>
+        <input type="checkbox" name="new" id="new" />
+        <button>Submit</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
