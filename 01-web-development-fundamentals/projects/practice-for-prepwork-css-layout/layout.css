@@ -1,0 +1,34 @@
+body {
+  text-align: center;
+}
+legend {
+  border: 1px solid black;
+}
+.labelss {
+  display: flex;
+  flex-direction: column;
+  display: block;
+  text-align: center;
+}
+.statDate {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+.lab {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+p {
+  padding: 0;
+  margin: 5px;
+}
+
+form {
+  width: fit-content;
+}
+button {
+  background-color: white;
+}
