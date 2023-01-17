@@ -1,9 +1,11 @@
 # App Academy Open curriculum progress
-*contains my notes, solutions, projects, etc. corresponding to my work through the App Academy Open curriculum with the Jan-Jun 2023 open cohort*
+
+_contains my notes, solutions, projects, etc. corresponding to my work through the App Academy Open curriculum with the Jan-Jun 2023 open cohort_
 
 ## Progress Checklist
-- [ ] 01-web-development-fundamentals
-- [ ] 02-javascript-fundamentals
+
+- [x] 01-web-development-fundamentals
+- [x] 02-javascript-fundamentals
 - [ ] 03-practice-week
 - [ ] 04-intermediate-javascript
 - [ ] 05-tdd-and-oop
