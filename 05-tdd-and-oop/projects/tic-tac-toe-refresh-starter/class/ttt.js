@@ -22,7 +22,6 @@ class TTT {
     console.log(`It is currently ${this.playerTurn}'s move:`);
 
     // Replace this with real commands
-    Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
 
     Screen.addCommand('w', 'move cursor up', this.cursor.up.bind(this.cursor));
     Screen.addCommand('s', 'move cursor down', this.cursor.down.bind(this.cursor));
@@ -63,10 +62,6 @@ class TTT {
     }
   }
 
-  // Remove this
-  static testCommand() {
-    console.log("TEST COMMAND");
-  }
 
   static checkWin(grid) {
     //empty grid
