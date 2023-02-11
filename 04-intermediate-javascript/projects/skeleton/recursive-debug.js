@@ -14,6 +14,9 @@ doForAll(["a", "b", "c"]), (x) => x.toUpperCase()); // => ["A", "B", "C"]
 ***********************************************************************/
 
 function doForAll(arr, action) {
+  if (arr.length === 0) {
+    return [];
+  }
   return [action(arr[0]), ...doForAll(arr.slice(1), action)];
 }
 
