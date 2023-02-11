@@ -1,12 +1,11 @@
-const { Item } = require(`./item`)
-// FILL THIS OUT
+const { Item } = require('./item');
 
 class Food extends Item {
+
   constructor(name, description) {
-    super(name, description)
+    super(name, description);
     this.edible = true;
   }
-
 }
 
 module.exports = {

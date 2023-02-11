@@ -13,16 +13,14 @@ class Character {
   applyDamage(amount) {
     // Fill this in
     this.health -= amount;
-    if (this.health <= 0) {
-      this.die();
-    }
+    if (this.health <= 0) { this.die() }
   }
 
   die() {
     // Fill this in
-    this.currentRoom.items = this.currentRoom.items.concat(this.items);
+    this.currentRoom.items = [...this.items];
     this.items = [];
-    this.currentRoom = null;
+    this.currentRoom = null
   }
 
 }

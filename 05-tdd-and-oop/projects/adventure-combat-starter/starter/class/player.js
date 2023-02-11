@@ -1,14 +1,12 @@
 const { Character } = require(`./character`)
+const { Enemy } = require('./enemy');
+const { Food } = require('./food');
 
-class Player {
+class Player extends Character {
 
   constructor(name, startingRoom) {
-    this.name = name;
-    this.currentRoom = startingRoom;
-    this.items = [];
-    this.health = 100;
+    super(name, "Character - Jacob", startingRoom);
   }
-
   move(direction) {
 
     const nextRoom = this.currentRoom.getRoomInDirection(direction);
@@ -31,6 +29,13 @@ class Player {
       for (let i = 0; i < this.items.length; i++) {
         console.log(`  ${this.items[i].name}`);
       }
+    }
+  }
+
+  applyDamage(amount) {
+    super.applyDamage(amount);
+    if (this.health <= 0) {
+      this.die();
     }
   }
 

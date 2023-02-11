@@ -27,6 +27,7 @@ class Enemy extends Character {
 
   takeSandwich() {
     // Fill this in
+
   }
 
   // Print the alert only if player is standing in the same room
@@ -65,7 +66,6 @@ class Enemy extends Character {
       this.rest();
     } else {
       this.scratchNose();
-      this.rest();
     }
 
     // Fill this in
