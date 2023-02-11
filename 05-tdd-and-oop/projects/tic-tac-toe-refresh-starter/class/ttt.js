@@ -1,5 +1,6 @@
 const Screen = require("./screen");
 const Cursor = require("./cursor");
+const { grid } = require("./screen");
 
 class TTT {
 
@@ -17,16 +18,49 @@ class TTT {
     Screen.initialize(3, 3);
     Screen.setGridlines(true);
 
+    this.cursor.setBackgroundColor();
+    console.log(`It is currently ${this.playerTurn}'s move:`);
+
     // Replace this with real commands
     Screen.addCommand('t', 'test command (remove)', TTT.testCommand);
 
-    Screen.addCommand('up', 'move cursor up', this.cursor.up.bind(this.cursor));
-    Screen.addCommand('down', 'move cursor down', this.cursor.down.bind(this.cursor));
-    Screen.addCommand('left', 'move cursor left', this.cursor.left.bind(this.cursor));
-    Screen.addCommand('right', 'move cursor right', this.cursor.right.bind(this.cursor));
+    Screen.addCommand('w', 'move cursor up', this.cursor.up.bind(this.cursor));
+    Screen.addCommand('s', 'move cursor down', this.cursor.down.bind(this.cursor));
+    Screen.addCommand('a', 'move cursor left', this.cursor.left.bind(this.cursor));
+    Screen.addCommand('d', 'move cursor right', this.cursor.right.bind(this.cursor));
+    Screen.addCommand('return', `place move at cursor position`, this.placeMove.bind(this));
 
     this.cursor.setBackgroundColor();
 
+  }
+
+  placeMove() {
+    let row = this.cursor.row;
+    let col = this.cursor.col;
+    let el = this.grid[row][col];
+
+    // Set grid element to player turn if unplayed and render
+    if (el === " ") {
+      this.grid[row][col] = this.playerTurn;
+      Screen.setGrid(row, col, this.playerTurn);
+
+      // Check for win after placing every move
+      let winner = TTT.checkWin(this.grid);
+
+      if (!!winner) {
+        TTT.endGame(winner);
+      } else {
+        // Switch player after a turn is played and the game is still unwon
+        this.playerTurn === "O" ? this.playerTurn = "X" : this.playerTurn = "O";
+        Screen.render();
+        console.log(`It is currently ${this.playerTurn}'s move:`);
+        Screen.printCommands();
+      }
+
+    } else {
+      console.log(`You cannot overwrite another player's turn!`);
+      Screen.printCommands();
+    }
   }
 
   // Remove this

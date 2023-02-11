@@ -32,7 +32,7 @@ class Screen {
     Screen.textColors = [];
     Screen.backgroundColors = [];
 
-    for (let row = 0 ; row < numRows ; row++) {
+    for (let row = 0; row < numRows; row++) {
       Screen.grid.push(new Array(numCols).fill(" "));
       Screen.textColors.push(new Array(numCols).fill(Screen.defaultTextColor));
       Screen.backgroundColors.push(new Array(numCols).fill(Screen.defaultBackgroundColor));
@@ -111,7 +111,7 @@ class Screen {
     Screen.quitMessage = quitMessage;
   }
 
-  static quit(showMessage=true) {
+  static quit(showMessage = true) {
     if (showMessage) console.log(Screen.quitMessage);
     process.exit(1);
   }
@@ -130,11 +130,11 @@ class Screen {
 
     console.log(horizontalBorder);
 
-    for (let row = 0 ; row < Screen.numRows ; row++) {
+    for (let row = 0; row < Screen.numRows; row++) {
 
       const rowCopy = [...Screen.grid[row]];
 
-      for (let col = 0 ; col < Screen.numCols ; col++) {
+      for (let col = 0; col < Screen.numCols; col++) {
 
         let textColor = Screen.textColors[row][col] ? Screen.textColors[row][col] : "";
         let backgroundColor = Screen.backgroundColors[row][col] ? Screen.backgroundColors[row][col] : "";
@@ -165,6 +165,7 @@ class Screen {
     console.log("");
 
     console.log(Screen.message);
+
 
   }
 
@@ -214,7 +215,9 @@ class Screen {
       throw new Error("Invalid background color");
     }
 
+
     Screen.backgroundColors[row][col] = code;
+    console.log(Screen.backgroundColors);
   }
 
   static setMessage(msg) {

@@ -27,38 +27,41 @@ class Cursor {
 
   up() {
     // Move cursor up
-    this.resetBackgroundColor();
+
     if (this.row > 0) {
+      this.resetBackgroundColor();
       this.row--;
     }
-    this.setBackgroundColor
+    this.setBackgroundColor();
+
   }
 
   down() {
     // Move cursor down
-    this.resetBackgroundColor();
     if (this.row < 2) {
+      this.resetBackgroundColor();
       this.row++;
     }
-    this.setBackgroundColor
+    this.setBackgroundColor();
+
   }
 
   left() {
     // Move cursor left
-    this.resetBackgroundColor();
     if (this.col > 0) {
-      this.col--
+      this.resetBackgroundColor();
+      this.col--;
     }
-    this.setBackgroundColor
+    this.setBackgroundColor();
   }
 
   right() {
     // Move cursor right
-    this.resetBackgroundColor();
     if (this.col < 2) {
-      this.col++
+      this.resetBackgroundColor();
+      this.col++;
     }
-    this.setBackgroundColor
+    this.setBackgroundColor();
   }
 
 }
