@@ -46,8 +46,8 @@ arr.reduce()
 
 
 arr.reverse()
-// Time complexity: O(n) Space complexity: O(n)
-//Justification: Returns a new array of size (n) so space complexity is O(n) and time is O(n) as well since iterating over original array n times
+// Time complexity: O(n) Space complexity: O(1)
+//Justification: Returns a new array of size (n) so space complexity is O(n) and time is O(1) but not exactly sure why
 
 
 //   [...arr]
