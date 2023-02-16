@@ -1,11 +1,8 @@
 {
-  "name": "array-practice",
+  "name": "linked-list-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "array-practice.js",
-  "directories": {
-    "test": "test"
-  },
+  "main": "linked-list.js",
   "scripts": {
     "test": "mocha"
   },
@@ -13,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.4",
-    "mocha": "^10.2.0"
+    "mocha": "^8.3.2"
   }
 }
