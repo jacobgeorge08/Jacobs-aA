@@ -8,8 +8,26 @@ const addZeros = require('../utils/addZeros');
 
 const asciiTo8bit = str => {
   // Your code here
-};
+  let bytes = '';
 
+  for (let i = 0; i < str.length; i++) {
+    let decimal = str.charCodeAt(i);
+    let binary = getRemainders(decimal, 2).join('');
+    let byte = addZeros(binary, 8);
+    bytes += byte;
+  }
+
+  return bytes;
+};
+const getRemainders = (num, divisor) => {
+
+  if (num === 0) return [];
+
+  const remainder = num % divisor;
+  const quotient = Math.floor(num / divisor);
+
+  return [...getRemainders(quotient, divisor), remainder];
+}
 /******************************************************************************/
 
 console.log(asciiTo8bit('123'));
